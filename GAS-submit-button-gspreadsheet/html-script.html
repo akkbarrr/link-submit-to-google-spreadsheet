@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>How to link submit button in form website to google spread sheet</title>
+
+    <!-- EXAMPLE FORM -->
+</head>
+<body>
+    <div class="container">
+        <header>FORM ISIAN PENGAWASAN INDUSTRI</header>
+
+        <form method="POST" name="google-sheet">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Data Perusahaan</span>
+
+                    <!-- change the label and input tag -->
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="namaperusahaan">Nama Perusahaan</label>
+                            <input type="text" id="fname" name="Nama Perusahaan" placeholder="Masukkan nama perusahaan" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="namadirektur">Nama Direktur/Penanggung Jawab</label>
+                            <input type="text" id="lname" name="Nama Direktur" placeholder="Masukkan nama direktur" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="alamatperusahaan">Alamat Perusahaan</label>
+                            <input type="text" id="lname" name="Alamat Perusahaan" placeholder="Masukkan alamat perusahaan" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="bidangusaha">Bidang Usaha Sesuai KBLI</label>
+                            <input type="text" id="lname" name="Bidang Usaha" placeholder="Masukkan bidang usaha" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="nilaimodal">Nilai Modal Perusahaan</label>
+                            <input type="text" id="lname" name="Nilai Modal" placeholder="Masukkan modal perusahaan" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="alamatkantor">Alamat Kantor</label>
+                            <input type="text" id="lname" name="Alamat Kantor" placeholder="Masukkan alamat kantor" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="alamatpabrik">Alamat Pabrik/Tempat Produksi</label>
+                            <input type="text" id="lname" name="Alamat Pabrik" placeholder="Masukkan alamat pabrik" required>
+                        </div>
+
+                        <button class="submit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+    <script src="script.js"></script>
+    <script>
+        const scriptURL =
+        'LINK-HERE'
+        const form = document.forms['google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("Thanks for submitting to us..!"))
+              .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>
